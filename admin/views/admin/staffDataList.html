@@ -1,0 +1,119 @@
+<div class="dataList">
+    <div class="select">
+        <dropdown ng-if="user.role =='super'" select-val="selected_location = selectedVal" preselected-item="selected_location" data-dropdown-data="location" dropdown-show="false" changefn="getDataByLocation" style="position: absolute;">
+        </dropdown>
+        <dropdown ng-if="user.role =='super'" select-val="selected_position = selectedVal" preselected-item="selected_position" data-dropdown-data="position" dropdown-show="false" changefn="getDataByPosition" style="position: absolute;margin-left: 100px;">
+        </dropdown>
+        <a class="btn-item" style="margin:0 0 0 200px;" ng-click="selectDate()" ng-if="selected_position== '电销'">选取批次</a>
+    </div>
+    <div class="total clearfix" ng-if="selected_position!= '电销'" ng-if="user.role =='super'">
+        <h1>数据概况</h1>
+        <ul ng-repeat="item in totalData track by $index">
+            <li><span>{{item.name}}</span></li>
+            <li><span class="count">{{item.count}}</span></li>
+        </ul>
+    </div>
+    <div class="total clearfix" ng-if="selected_position== '电销' && user.role =='super'">
+        <h1>数据概况<span style="margin-left:10px;">（选取的批次为：</span><span ng-repeat="item in batch track by $index" style="margin-right:10px;color:red;">{{item}}</span>）</h1>
+        <ul>
+            <li><span>线索数</span></li>
+            <li><span class="count">{{phoneSell.acceptedNum}}</span></li>
+        </ul>
+        <ul>
+            <li><span>已反馈</span></li>
+            <li><span class="count">{{phoneSell.feedbackNum}}</span></li>
+        </ul>
+        <ul>
+            <li><span>接通</span></li>
+            <li><span class="count">{{phoneSell.connected}}</span></li>
+        </ul>
+        <ul>
+            <li><span>未接通</span></li>
+            <li><span class="count">{{phoneSell.unconnected}}</span></li>
+        </ul>
+        <ul>
+            <li><span>有意向</span></li>
+            <li><span class="count">{{phoneSell.intentedNum}}</span></li>
+        </ul>
+        <ul>
+            <li><span>无意向</span></li>
+            <li><span class="count">{{phoneSell.unIntentedNum}}</span></li>
+        </ul>
+        <ul>
+            <li><span>邀约成功</span></li>
+            <li><span class="count">{{phoneSell.invitedNum}}</span></li>
+        </ul>
+        <ul>
+            <li><span>邀约不成功</span></li>
+            <li><span class="count">{{phoneSell.unInvitedNum}}</span></li>
+        </ul>
+        <ul>
+            <li><span>接通率</span></li>
+            <li><span class="count">{{phoneSell.connectRatio}}</span></li>
+        </ul>
+        <ul>
+            <li><span>邀约率</span></li>
+            <li><span class="count">{{phoneSell.inviteRatio}}</span></li>
+        </ul>
+
+
+    </div>
+    <div class="mainTable staffDataTable">
+        <table class="datatable">
+            <tr>
+                <th>用户名</th>
+                <th ng-if="selected_position != '电销'">接收</th>
+                <th ng-if="selected_position == '电销'">线索数</th>
+                <th>已反馈</th>
+                <th ng-if="selected_position== '电销'">接通</th>
+                <th ng-if="selected_position== '电销'">未接通</th>
+                <th>有意向</th>
+                <th>无意向</th>
+                <th>邀约成功</th>
+                <th ng-if="selected_position != '电销'">邀约不成功</th>
+
+
+            </tr>
+            <tr ng-repeat="item in infoList track by $index">
+                <td>{{item.userName}}</td>
+                <td>{{item.acceptedNum}}</td>
+                <td>{{item.feedbackNum}}</td>
+                <td ng-if="selected_position== '电销'">{{item.connectNum}}</td>
+                <td ng-if="selected_position== '电销'">{{item.unConnectNum}}</td>
+                <td>{{item.intentedNum}}</td>
+                <td>{{item.unIntentedNum}}</td>
+                <td>{{item.invitedNum}}</td>
+                <td ng-if="selected_position!= '电销'"><span>{{item.unInvitedNum}}</span></td>
+
+            </tr>
+        </table>
+    </div>
+    <div ng-show="isShow">
+        <div class="modal-backdrop"></div>
+        <div class="modal">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <h1><span>选择批次</span>
+                        <a href="" class="close" ng-click="closeDialog()"></a>
+                    </h1>
+                </div>
+                <form name="staffForm">
+                    <div class="addmember-con">
+                        <div class="base-info">
+                            <ul class="clearfix">
+                                <li ng-repeat="item in date track by $index" class="left" style="width:25%;margin-bottom:20px;">
+                                    <input type="checkbox" style="margin-right:5px;width:15px;height:15px;" ng-checked="dataDate['selectDate'+$index] != null" ng-true-value="{{item.batchName}}" ng-false-value=null ng-model="dataDate['selectDate'+$index]">                                    {{item.batchName}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="sub-btn-box">
+                            <p style="color:red;display:none;" class="tip">批次不能为空！</p>
+                            <button class="button-submit" type="submit" ng-click="submit()">查询</button>
+                            <a class="button-cancel" ng-click="closeDialog()">取消</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

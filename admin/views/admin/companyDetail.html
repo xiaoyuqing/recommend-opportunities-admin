@@ -1,0 +1,84 @@
+<div class="company">
+    <div class="select clearfix">
+        <ul class="left">
+            <li style="margin-bottom: 10px">地区</li>
+            <li>
+                <dropdown select-val="selected_remark = selectedVal" preselected-item="selected_location" data-dropdown-data="location" dropdown-show="false" changefn="getDataByLocation" style="position:absolute;">
+                </dropdown>
+            </li>
+        </ul>
+        <ul class="left" style="margin-left: 60px;">
+            <li style="margin-bottom: 10px">数据类型</li>
+            <li>
+                <dropdown select-val="selected_position = selectedVal" preselected-item="selected_position" data-dropdown-data="position" dropdown-show="false" changefn="getDataByPosition" style="position: absolute;">
+                </dropdown>
+            </li>
+        </ul>
+        <ul class="left" style="margin-left: 50px;">
+            <li style="margin-bottom: 10px">是否有意向</li>
+            <li>
+                <dropdown select-val="selected_intent = selectedVal" preselected-item="selected_intent" data-dropdown-data="intent" dropdown-show="false" changefn="getDataByIntent" style="position: absolute;">
+                </dropdown>
+            </li>
+        </ul>
+        <ul class="left" style="margin-left: 50px;">
+            <li style="margin-bottom: 10px">是否邀约成功</li>
+            <li>
+                <dropdown select-val="selected_invited = selectedVal" preselected-item="selected_invited" data-dropdown-data="invited" dropdown-show="false" changefn="getDataByInvited" style="position:absolute;">
+                </dropdown>
+            </li>
+        </ul>
+        <ul class="left" style="margin-left: 50px;">
+            <li style="margin-bottom: 10px">是否有备注</li>
+            <li>
+                <dropdown select-val="selected_remark = selectedVal" preselected-item="selected_remark" data-dropdown-data="remark" dropdown-show="false" changefn="getDataByRemark" style="position:absolute;">
+                </dropdown>
+            </li>
+        </ul>
+    </div>
+    <div class="companyDetail mainTable">
+        <table class="datatable">
+            <tr>
+                <th>公司</th>
+                <th>联系方式</th>
+                <th>是否有意向</th>
+                <th>邀约情况</th>
+                <th>备注</th>
+            </tr>
+            <tr ng-repeat="item in pageData track by $index">
+                <td style="width: 30%;">
+                    <ul>
+                        <li>
+                            <h1><a>{{item.companyName}}</a></h1>
+                        </li>
+                        <li><span>法人：{{item.representative}}</span><span class="spanSpe">估计外勤规模：{{item.outdoorEmployeeCount}}</span></li>
+                        <li><span>行业：{{item.category}}</span><span></span></li>
+                        <li><span>规模：{{item.employeeNum}}</span><span class="spanSpe">成立时间：{{item.foundDate}}</span></li>
+                        <li><span>公司产品：{{item.products}}</span></li>
+                        <li><span>地址：{{item.location}}</span></li>
+                        <li><span>注册资本：{{item.regCapital}}</span></li>
+
+
+                    </ul>
+                </td>
+                <td style="width: 30%;"><span ng-bind-html="item.companyPhone"></span></td>
+                <td><span ng-if="item.intent == -1">未反馈</span><span ng-if="item.intent == 1">有意向</span><span ng-if="item.intent == 0">无意向</span></td>
+                <td><span ng-if="item.invited == -1">未反馈</span><span ng-if="item.invited == 1">邀约成功</span><span ng-if="item.invited == 0">邀约不成功</span></td>
+                <td>{{item.niRemark}}</td>
+            </tr>
+        </table>
+        <ul class="pagination">
+            <li>
+                <a ng-click="getPrePage()" class="forward"></a>
+            </li>
+            <li><span ng-bind="currentPage"></span>/<span ng-bind="pages"></span></li>
+            <li>
+                <a ng-click="getNextPage()" class="toward"></a>
+            </li>
+            <li><input type="text" ng-model="inputNum"></li>
+            <li><a ng-click="getPageByInputNum()" class="goAhead">跳转</a></li>
+            <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>

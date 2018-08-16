@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="directApp" style="overflow-y: scroll;">
+
+<head>
+    <meta charset="UTF-8">
+    <title>直销推荐系统</title>
+
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/staff.css" rel="stylesheet">
+    <link href="css/staffDataList.css" rel="stylesheet">
+    <link href="css/companyDetail.css" rel="stylesheet">
+    <link href="css/dropdown.css" rel="stylesheet">
+    <link href="css/directSell.css" rel="stylesheet">
+    <script src="js/directBase.min.js"></script>
+</head>
+
+<body ng-controller="NavCtr">
+    <header>
+        <div>
+            <p><a class="left" style="margin-left:30px;color:##5d8fe1;" href="http://open.fxiaoke.com/business-recommendation/admin/admin.html">首页</a>直销推荐系统</p>
+        </div>
+    </header>
+    <div class="bd">
+        <div class="manage-left-nav">
+            <ul>
+                <li ng-class="{cur:isCur('/client')}" class="selectedClient"><a href="#/client" ng-click="closeIndustry()"><span>已选客户</span></a></li>
+                <li ng-class="{cur:isCur('/getClient')}"><a href="#/getClient" ng-click="openIndustry()"><span>选取客户</span></a></li>
+                <li class="industry">
+                    <a ng-click="chooseIndustry()"><span>选择行业</span><span style="margin-left:190px;">></span></a>
+                    <ul ng-show="industryShow">
+                        <li>
+                            <a ng-click="getIndustryData('all')"><span>所有行业</span></a></li>
+                        <li ng-repeat="item in category ">
+                            <a href="#/getClient" ng-click="getIndustryData(item.industryCategory) " ng-class="{curr: curIndustry==item.industryCategory} "><span>{{item.industryCategory}}</span><span>（{{item.cnt}}）</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div ng-view class="manage-right ">
+
+        </div>
+    </div>
+    <script src="js/apiService.js "></script>
+    <script src="js/directSell/getClient.js "></script>
+    <script src="js/directSell/client.js "></script>
+    <script src="js/directSell/directSellApp.js "></script>
+    <script src="js/directSell/myCompanyDetail.js "></script>
+
+
+</body>
+
+</html>

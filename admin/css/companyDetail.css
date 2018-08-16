@@ -1,0 +1,104 @@
+.company {
+  min-width: 1100px;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.company h1 {
+  margin-bottom: 20px;
+}
+.company h1 a.change {
+  font-size: 15px;
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  margin-top: -7px;
+  padding: 0 8px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #5d8fe1;
+  cursor: pointer;
+  transition: all 0.125s;
+}
+.company .companyDetail {
+  padding-top: 50px;
+}
+.company .companyDetail .datatable {
+  border: 1px solid #f2f2f2;
+  border-bottom: none;
+}
+.company .companyDetail .datatable th,
+.company .companyDetail .datatable td {
+  text-align: left;
+  padding: 5px 15px;
+}
+.company .companyDetail .datatable th ul li,
+.company .companyDetail .datatable td ul li {
+  margin-bottom: 10px;
+}
+.company .companyDetail .datatable th ul li h1,
+.company .companyDetail .datatable td ul li h1 {
+  padding: 5px 0;
+  font-size: 18px;
+}
+.company .companyDetail .datatable th ul li h1 a,
+.company .companyDetail .datatable td ul li h1 a {
+  color: #5d8fe1;
+}
+.company .companyDetail .datatable th ul li span.spanSpe,
+.company .companyDetail .datatable td ul li span.spanSpe {
+  margin-left: 20px;
+}
+.company .companyDetail .datatable td {
+  padding: 20px 10px;
+}
+.company .companyDetail .datatable a.btn-item {
+  display: inline-block;
+  height: 28px;
+  line-height: 28px;
+  margin-top: -7px;
+  padding: 0 8px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #5d8fe1;
+  cursor: pointer;
+  transition: all 0.125s;
+}
+.company .companyDetail ul.pagination {
+  float: right;
+  margin-top: 18px;
+}
+.company .companyDetail ul.pagination li {
+  float: left;
+  line-height: 30px;
+  margin-left: 10px;
+  text-align: center;
+}
+.company .companyDetail ul.pagination li a.forward {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url("../css/img/fanye4.png") no-repeat 0 0;
+}
+.company .companyDetail ul.pagination li a.toward {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url("../css/img/fanye2.png") no-repeat 0 0;
+}
+.company .companyDetail ul.pagination li a.goAhead {
+  display: block;
+  width: 58px;
+  height: 28px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #b8b0a7;
+  background-color: #fff;
+}
+.company .companyDetail ul.pagination li input {
+  border: 1px solid #b8b0a7;
+  border-radius: 2px;
+  width: 58px;
+  height: 28px;
+  text-align: center;
+}

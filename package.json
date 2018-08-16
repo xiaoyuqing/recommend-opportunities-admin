@@ -1,0 +1,32 @@
+{
+  "name": "recommend-opportunities-admin",
+  "version": "1.0.0",
+  "description": "data statistic",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -a 0.0.0.0 -p 8000"
+  },
+  "author": "xiaoyq",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^2.2.1"
+  },
+  "devDependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-less": "^3.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-postcss": "^6.2.0",
+    "gulp-rev": "^7.1.2",
+    "gulp-rev-collector": "^1.0.5",
+    "gulp-uglify": "^2.0.0",
+    "gulp-useref": "^3.1.2",
+    "http-proxy-middleware": "^0.17.1",
+    "run-sequence": "^1.2.2"
+  }
+}

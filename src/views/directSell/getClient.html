@@ -1,0 +1,41 @@
+
+<div class="company">
+    <h1 class="clearfix"><a href="" class="change right" ng-click="changeData()">换一批</a></h1>
+    <div class="companyDetail mainTable" style="padding-top:0px;">
+        <table class="datatable">
+            <tr>
+                <th style="width:20%;">公司</th>
+                <th style="width:200px;">联系方式</th>
+                <th style="width:30%;max-width:400px;">公司简介</th>
+                <th style="width:20%;max-width:400px;">经营范围</th>
+                <th style="width:10%;"></th>
+            </tr>
+            <tr ng-repeat="item in chanceData track by $index">
+                <td style="width:20%;">
+                    <ul>
+                        <li>
+                            <h1><a style="cursor:default;">{{item.companyName}}</a></h1>
+                        </li>
+                        <li><span>法人：{{item.representative}}</span></li>
+                        <li><span>行业：{{item.industry}}</span><span></span></li>
+                        <li><span>规模：{{item.employeeNum}}</span><span class="spanSpe">成立时间：{{item.foundDate}}</span></li>
+                        <li><span>公司产品：{{item.products}}</span></li>
+                        <li><span>地址：{{item.companyLocation}}</span></li>
+                    </ul>
+                </td>
+                <td style="width:20%;"><span ng-bind-html="item.companyPhone"></span></td>
+                <td style="width:20%;">
+                    <ul>
+                        <li style="width:100%;word-break:break-all;max-width:400px;" ng-bind-html="item.companyIntro"></li>
+
+                    </ul>
+                </td>
+                <td style="width:20%;">{{item.description}}</td>
+                <td style="text-align:center;" style="width:20%;">
+                    <a href="" class="btn-item receive" id="{{'receive'+ item.recommendationResultId}}" ng-click="receive(item.recommendationResultId)">接收</a>
+                    <a href="#/client" class="btn-item tip" style="display: none;background-color:#f59425;" id="{{'tip'+ item.recommendationResultId}}">已接收</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

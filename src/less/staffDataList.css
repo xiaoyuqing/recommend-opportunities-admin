@@ -1,0 +1,45 @@
+.dataList {
+  background-color: #fff;
+  border-radius: 4px 4px 0 0;
+  padding: 20px;
+  position: relative;
+}
+.dataList .select {
+  padding-bottom: 20px;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+.dataList .select a.btn-item {
+  display: inline-block;
+  height: 28px;
+  line-height: 28px;
+  margin-top: -7px;
+  padding: 0 8px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #5d8fe1;
+  cursor: pointer;
+  transition: all 0.125s;
+}
+.dataList .total {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f1f4fb;
+  margin-bottom: 20px;
+}
+.dataList .total h1 {
+  margin-bottom: 20px;
+}
+.dataList .total ul {
+  width: 14%;
+  float: left;
+}
+.dataList .total ul li span.count {
+  color: #5d8fe1;
+  font-size: 30px;
+}
+.dataList .staffDataTable .datatable {
+  border: 1px solid #f2f2f2;
+  border-bottom: none;
+}

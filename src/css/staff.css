@@ -1,0 +1,138 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 1200px;
+  z-index: 100;
+  background-color: #F4F6FC;
+}
+header div {
+  height: 60px;
+  line-height: 60px;
+  z-index: 10;
+}
+header div p {
+  text-align: center;
+}
+.bd {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 60px;
+}
+.bd .manage-left-nav {
+  min-height: 880px;
+  width: 300px;
+  background-color: #343f51;
+  left: 0;
+  top: 60px;
+  bottom: 0;
+  z-index: 120;
+}
+.bd .manage-left-nav li {
+  width: 100%;
+  line-height: 54px;
+}
+.bd .manage-left-nav li a {
+  display: block;
+  padding: 0 20px;
+  color: #cfdaec;
+  color: #fff;
+  position: relative;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.bd .manage-left-nav li:hover a,
+.bd .manage-left-nav li.cur a {
+  background-color: #2b3442;
+  text-decoration: none;
+  color: #5d8fe1;
+}
+.bd .manage-left-nav li.industry ul li:hover a {
+  color: #f59425;
+}
+.bd .manage-left-nav li.industry ul li a.curr {
+  color: #f59425;
+}
+.bd .manage-right {
+  padding: 20px;
+  position: absolute;
+  left: 300px;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.ui-datatable {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.ui-datatable .ui-datatable-caption {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  background-color: #fff;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  overflow: hidden;
+}
+.ui-datatable .ui-datatable-caption .btn-item {
+  float: left;
+  height: 14px;
+  line-height: 14px;
+  margin-top: 18px;
+  padding: 0 3px;
+}
+.ui-datatable .caption-title {
+  float: left;
+  padding: 0 18px;
+  height: 50px;
+  overflow: hidden;
+}
+.ui-datatable .caption-toolbar {
+  float: right;
+  padding: 0 20px;
+}
+.ui-datatable .caption-rbtns-box {
+  float: left;
+}
+.ui-datatable .btn-item em {
+  display: block;
+  height: 28px;
+  line-height: 28px;
+  margin-top: -7px;
+  padding: 0 8px;
+  border-radius: 5px;
+  color: #3487e2;
+  cursor: pointer;
+  transition: all 0.125s;
+}
+.ui-datatable .btn-item em:hover,
+.ui-datatable .btn-item.cur em {
+  color: #fff;
+  background-color: #3487e2;
+}
+.ui-datatable .edit-btn em {
+  width: 30px;
+  margin: 0;
+}
+.mainTable .datatable {
+  width: 100%;
+}
+.mainTable .datatable th {
+  background-color: #f1f4fb;
+  height: 38px;
+  font-weight: 400;
+  border-bottom: 1px solid #e2e7f4;
+}
+.mainTable .datatable td {
+  height: 38px;
+  border-bottom: 1px solid #f2f2f2;
+  text-align: center;
+  background-color: #fff;
+}

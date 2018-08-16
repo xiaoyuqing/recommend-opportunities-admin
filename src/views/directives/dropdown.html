@@ -1,0 +1,7 @@
+<div class="dropdown" data-ng-click="dropdownHandle()" ng-mouseleave="dropdownShow=false">
+    <div class="dropdown-handle"><span class="span-text">{{preselectedItem}}</span><span class="dropdwon-pic"></span>
+    </div>
+    <ul class="dropdown-content" ng-show="dropdownShow">
+        <li ng-repeat="item in items" ng-click="selectVal(item,$event)"><span>{{item}}</span></li>
+    </ul>
+</div>

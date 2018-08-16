@@ -1,0 +1,51 @@
+.resourceList {
+  background-color: #fff;
+  padding: 20px;
+}
+.resourceList .feedbackList {
+  margin-bottom: 20px;
+}
+.resourceList .feedbackList h1 {
+  padding: 10px 20px;
+  background-color: #F4F6FC;
+}
+.resourceList .feedbackList .resourceDetail {
+  border: 1px solid #F4F6FC;
+}
+.resourceList .feedbackList .resourceDetail ul {
+  padding-bottom: 10px;
+}
+.resourceList .feedbackList .resourceDetail ul li {
+  padding: 0 20px;
+}
+.resourceList .feedbackList .resourceDetail ul li a {
+  color: #5d8fe1;
+  line-height: 35px;
+}
+.resourceList .feedbackList .resourceDetail ul li.state {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-bottom: 2px;
+}
+.resourceList .feedbackList .resourceDetail ul li.state span {
+  font-size: 12px;
+  color: #929292;
+  padding-right: 20px;
+}
+p.remark textarea {
+  width: 200px;
+  height: 100px;
+}
+a.submit {
+  display: inline-block;
+  height: 28px;
+  line-height: 28px;
+  margin-top: -7px;
+  padding: 0 8px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #5d8fe1;
+  cursor: pointer;
+  transition: all 0.125s;
+}

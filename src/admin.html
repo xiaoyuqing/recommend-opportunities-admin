@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="loginApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>商机推荐系统</title>
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
+    <!--build:js js/base.js-->
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/angular-route/angular-route.min.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- endbuild -->
+</head>
+
+<body ng-controller="loginCtr">
+    <div class="signSelect">
+        <div class="left wrap" ng-if="user.role =='super' || user.role =='admin'">
+            <a class="thumbnail" href="index.html">商机推荐后台管理</a>
+        </div>
+        <!--<div class="left wrap" ng-if="user.webRole == 1">
+            <a class="thumbnail" href="{{'http://172.31.105.20:29301/business-recommendation/web/user/enterUserAccount?name='+ user.name+'&nickName='+ user.nickedName}}">电销推荐系统</a>
+        </div>
+        <div class="left wrap" ng-if="user.role =='member' || user.role =='admin' || user.role =='super'">
+            <a class="thumbnail" href="{{'http://10.22.0.77:8081/business-recommendation/app/enterDirectSale?openUserId='+user.openUserId + '&name='+user.name}}">直销推荐系统</a>
+        </div>-->
+        <div class="left wrap" ng-if="user.webRole == 1">
+            <a class="thumbnail" href="{{'http://open.fxiaoke.com/business-recommendation/web/user/enterUserAccount?name='+ user.name+'&nickName='+ user.nickedName}}">电销推荐系统</a>
+        </div>
+        <div class="left wrap" ng-if="user.role =='member' || user.role =='admin' || user.role =='super'">
+            <a class="thumbnail" href="{{'http://open.fxiaoke.com/business-recommendation/app/enterDirectSale?openUserId='+user.openUserId + '&name='+user.name}}">直销推荐系统</a>
+        </div>
+    </div>
+    <script src="js/apiService.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

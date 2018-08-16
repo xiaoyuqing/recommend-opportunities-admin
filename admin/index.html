@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="adminApp" style="overflow-y: scroll;">
+
+<head>
+    <meta charset="UTF-8">
+    <title>商机推荐管理系统</title>
+
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/staff.css" rel="stylesheet">
+    <link href="css/staffDataList.css" rel="stylesheet">
+    <link href="css/companyDetail.css" rel="stylesheet">
+    <link href="css/dropdown.css" rel="stylesheet">
+    <script src="js/base.min.js"></script>
+</head>
+
+<body ng-controller="NavCtr">
+    <header>
+        <div>
+            <p><a class="left" style="margin-left:30px;color:##5d8fe1;" href="http://open.fxiaoke.com/business-recommendation/admin/admin.html">首页</a>商机推荐系统后台管理</p>
+        </div>
+        <div style="width: 15%;position: absolute;right: 0;top:0;">
+            <p>用户：{{user.name}}</p>
+        </div>
+    </header>
+    <div class="bd">
+        <div class="manage-left-nav">
+            <ul>
+                <li ng-class="{cur:isCur('/staffDataList')}"><a href="#/staffDataList"><span>数据统计</span></a></li>
+                <li ng-class="{cur:isCur('/staff')}" ng-if="user.role == 'super'"><a href="#/staff"><span>管理员工</span></a></li>
+                <li ng-class="{cur:isCur('/companyDetail')}"><a href="#/companyDetail"><span>公司详情</span></a></li>
+            </ul>
+        </div>
+        <div ng-view class="manage-right">
+
+        </div>
+    </div>
+    <script src="js/hashMap.js"></script>
+    <script src="js/apiService.js"></script>
+    <script src="js/admin/app.js"></script>
+    <script src="js/admin/staff.js"></script>
+    <script src="js/admin/staffDataList.js"></script>
+    <script src="js/admin/companyDetail.js"></script>
+</body>
+
+</html>

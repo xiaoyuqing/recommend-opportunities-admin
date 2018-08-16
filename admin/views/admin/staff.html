@@ -1,0 +1,91 @@
+<div class="ui-datatable ui-datatable-trhandle">
+    <!--头部-->
+    <div class="ui-datatable-caption">
+        <!--标题-->
+        <div class="caption-title">
+            <h3 class=""><span >全公司</span></h3>
+        </div>
+        <!--工具条-->
+        <div class="caption-toolbar">
+            <!--右侧图标-->
+            <div class="caption-rbtns-box">
+                    <span class="btn-item j-addmember-btn  first" ng-click="addStaff(true)">
+                        <em class="">添加员工</em>
+                    </span>
+
+            </div>
+        </div>
+    </div>
+    <!-- 主table  -->
+    <div class="mainTable">
+        <table class="datatable">
+            <tr>
+                <th>姓名</th>
+                <th>上级</th>
+                <th>权限角色</th>
+                <th>地区</th>
+                <th>岗位类别</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="item in staffList track by $index" >
+                <td>{{item.name}}</td>
+                <td>{{item.superior}}</td>
+                <td>{{item.role}}</td>
+                <td>{{item.location}}</td>
+                <td>{{item.type}}</td>
+                <td style="width: 8%;">
+                    <span class="btn-item edit-btn" ng-click="editStaff($index,false)">
+                        <em class="">编辑</em>
+                    </span>
+                </td >
+                <td style="width: 8%;"><span class="btn-item edit-btn" ng-click="deleteStaff($index)"><em>删除</em></span></td>
+            </tr>
+        </table>
+    </div>
+    <div ng-show="isShow">
+    <div class="modal-backdrop"></div>
+    <div class="modal">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h1><span>添加员工</span><a href="" class="close" ng-click="closeDialog()"></a></h1>
+            </div>
+            <form name="staffForm" novalidate ng-submit="submitForm()">
+                <div class="addmember-con">
+                    <div class="base-info">
+                        <p>
+                            <label><em>*</em>姓名</label>
+                            <input type="text" class="ipt" ng-model="member.name" name="name" required ng-focus>
+                            <span ng-show="staffForm.name.$error.required && !staffForm.name.$focused" class="error">请输入姓名</span>
+                        </p>
+                        <p>
+                            <label><em>*</em>上级</label>
+                            <input type="text" class="ipt" ng-model="member.superior" name="superior" required>
+                            <span ng-show="staffForm.superior.$error.required && staff_form.submitted" class="error">请输入上级</span>
+                        </p>
+                        <p>
+                            <label><em>*</em>权限角色</label>
+                            <input type="text" class="ipt" ng-model="member.role" name="role" required>
+                            <span ng-show="staffForm.role.$error.required && staff_form.submitted" class="error">请输入权限角色</span>
+                        </p>
+                        <p>
+                            <label><em>*</em>地区</label>
+                            <input type="text" class="ipt" ng-model="member.location" name="location" required>
+                            <span ng-show="staffForm.location.$error.required && staff_form.submitted" class="error">请输入地区</span>
+                        </p>
+                        <p>
+                            <label><em>*</em>岗位类别</label>
+                            <input type="text" class="ipt" ng-model="member.type" name="type" required>
+                            <span ng-show="staffForm.type.$error.required && staff_form.submitted" class="error">请输入岗位类别</span>
+                        </p>
+                    </div>
+                    <div class="sub-btn-box">
+                        <button class="button-submit"  type="submit" ng-submit="submitForm()">保存</button>
+                        <a class="button-cancel" ng-click="closeDialog()">取消</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+</div>

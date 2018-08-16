@@ -1,0 +1,34 @@
+<div class="resourceList">
+    <div class="feedbackList">
+        <h1>已反馈</h1>
+        <div class="resourceDetail">
+            <ul ng-repeat="item in resourceData.acceptedCompanyListOld track by $index" ng-click="getCompanyDetail(item.recommendationResultId,item.intent,item.invited,item.niRemark)">
+                <li>
+                    <a href="">{{item.companyName}}</a>
+                </li>
+                <li class="state">
+                    <span ng-if="item.intent == 1">有意向</span>
+                    <span ng-if="item.intent == 0">没意向</span>
+                    <span ng-if="item.invited == 1">邀约成功</span>
+                    <span ng-if="item.invited == 0">邀约不成功</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="feedbackList">
+        <h1>待反馈</h1>
+        <div class="resourceDetail">
+            <ul ng-repeat="item in resourceData.acceptedCompanyListNow track by $index" ng-click="getCompanyDetail(item.recommendationResultId,item.intent,item.invited,item.niRemark)">
+                <li>
+                    <a href="">{{item.companyName}}</a>
+                </li>
+                <li class="state">
+                    <span ng-if="item.intent == 1">有意向</span>
+                    <span ng-if="item.intent == 0">没意向</span>
+                    <span ng-if="item.invited == 1">邀约成功</span>
+                    <span ng-if="item.invited == 0">邀约不成功</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

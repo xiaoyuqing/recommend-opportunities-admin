@@ -1,0 +1,80 @@
+<div class="company">
+    <div class="companyDetail mainTable" style="padding-top:0px;">
+        <table class="datatable">
+            <tr>
+                <th style="width:25%;">公司</th>
+                <th style="width:10%;">联系方式</th>
+                <th style="width:30%;min-width:200px;">公司简介</th>
+                <th style="width:20%;min-width:150px;">经营范围</th>
+                <th style="width:15%;">反馈</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>
+                            <h1><a>{{companyData.companyName}}</a></h1>
+                        </li>
+                        <li><span>法人：{{companyData.representative}}</span></li>
+                        <li><span>行业：{{companyData.category}}</span><span></span></li>
+                        <li><span>注册资本： {{companyData.regCapital}}</span><span></span></li>
+                        <li><span>规模：{{companyData.employeeNum}}</span></li>
+                        <li><span>成立时间：{{companyData.foundDate}}</span></li>
+                        <li><span>公司产品：{{companyDataitem.products}}</span></li>
+                        <li><span>地址：{{companyData.location}}</span></li>
+                        <li><span>网址：<a href={{companyData.companyWebsiteUrl}}>{{companyData.companyWebsiteUrl}}</a></span></li>
+                    </ul>
+                </td>
+                <td>
+                    <span ng-bind-html="companyData.companyPhone"></span>
+                    <p><span style="display: none;" class="correction"><textarea ng-model="correctText" style="width:200px;height:300px;"></textarea></span></p>
+                    <p><a class="btn-item correct" style="margin-top:20px;" ng-click="correct()">纠错</a></p>
+                    <p><a class="btn-item confirm" style="display: none;margin-top:20px;" ng-click="confirm()">确认</a></p>
+                </td>
+                <td>
+                    <ul>
+                        <li style="width:100%;word-break:break-all;max-width:400px;" ng-bind-html="companyData.companyIntro"></li>
+
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>{{companyData.description}}</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul class="beforeSubmit">
+                        <li>
+                            <label><input type="radio" name="intention" ng-model="companyCtrl.feedbackData.intent" value="1" class="radio">有意向</label>
+                            <label><input type="radio" name="intention" ng-model="companyCtrl.feedbackData.intent" value="0" class="radio">没意向</label>
+                        </li>
+                        <li>
+                            <label><input type="radio" name="invite" ng-model="companyCtrl.feedbackData.invited" value="1" class="radio">邀约成功</label>
+                            <label><input type="radio" name="invite" ng-model="companyCtrl.feedbackData.invited" value="0" class="radio">没邀约成功</label>
+
+                        </li>
+                        <li>
+                            <p>备注</p>
+                            <p class="remark">
+                                <textarea ng-model="companyCtrl.feedbackData.niRemark" placeholder="请您填写反馈意见"></textarea>
+                            </p>
+                        </li>
+                        <li><a class="submit" ng-click="submit()">提交</a></li>
+                    </ul>
+                    <ul class="submited" style="display: none;">
+                        <li ng-if="companyCtrl.feedbackData.intent == 1">有意向</li>
+                        <li ng-if="companyCtrl.feedbackData.intent == 0">无意向意向</li>
+                        <li ng-if="companyCtrl.feedbackData.invited == 1">邀约成功</li>
+                        <li ng-if="companyCtrl.feedbackData.invited == 0">邀约不成功</li>
+                        <li>
+                            <p>备注</p>
+                            <p class="remark">
+                                <textarea ng-model="companyCtrl.feedbackData.niRemark" placeholder="请您填写反馈意见"></textarea>
+                            </p>
+                        </li>
+                        <li><a class="submit" ng-click="submit()">提交</a></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
